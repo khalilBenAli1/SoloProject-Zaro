@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Forniture</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		
+		<div id="left">
+			
+			<img src="img/Logo.png" id="logo">
+		</div>
+		<div id="middle">
+			
+			<input type="text" placeholder="Search for your favorate products.." id="search"><button id="searchButt"><i class="fa-solid fa-magnifying-glass"></i></button></input>
+			
+		</div>
+		<div id="right">
+			<button id="signinToggle">Sign In</button>
+			<button id="signUpToggle">Sign Up</button>
+			<div id="SignInDialog">
+				<div class="container">
+					<input type="email" name="E-mail" id="signInemail" placeholder="Email" class="child">
+					<input type="password" name="PassWord" id="signInpass" placeholder="Password" class="child">
+					<button id="signIn" class="child">SignIn</button>
+					<p class="child">you don't have an account ? Sign Up</p>
+					<div id='wrong' class="child">
+					</div>
+				</div>
+			</div>
+			<div id="SignUpDialog">
+				<div class="container">
+					<input type="text" name="firstName" id="firstName" class="child" placeholder="First Name">
+					<input type="text" name="lastName" id="lastName" class="child" placeholder="Last Name">
+					<input type="email" name="E-mail" id="signUpEmail" class="child" placeholder="Email">
+					<input type="password" name="PassWord" id="signUpPass" class="child" placeholder="Password">
+					<button id="signUp" class="child">SignUp</button>
+					<p class="child">you have an account ? Sign In</p>
+					<div id='weakPass' class="child">	
+					</div>
+				</div>
+			</div>
+			<i class="fa-solid fa-cart-shopping"></i>
+		</div>
+	</header>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
