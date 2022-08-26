@@ -2,9 +2,8 @@
 	
 	text-align: center;
 	margin-top: 50px;
-    border: solid;
-    border-color: blue;
-    border-width: 10px;
+ 
+
 
 }
 .child{
@@ -38,6 +37,10 @@ header{
     flex-direction: row;  
     flex-wrap: nowrap;
     justify-content: space-between;
+    border-bottom: solid;
+    border-color: black;
+    border-width:1px ;
+    margin-bottom: 10px;
     
     
 }
@@ -93,3 +96,98 @@ header{
 body{
     width:0 auto
 }
+#sideBar{
+float: left;
+
+width: 27%;
+height: 800px;
+border-right: solid;
+border-color: black;
+border-width:1px ;
+}
+#content{
+float: right;
+
+width: 70%;
+height: 800px;
+}
+#footer{
+    clear: both;
+    width: 100%;
+    height: 200px;
+    background-color: black;
+}
+#slide{
+    width: 95%;
+    height: 600px;
+    
+}
+#imgSlider{
+    text-align: center;
+    margin-top: 50px;
+}
+li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    
+    margin-bottom: 40px;
+    font-size: 30px;
+
+}
+li:hover{
+    cursor: pointer;
+}
+ul{
+    margin-top: 50px;
+}
+#grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    
+    font-size: 30px;
+    text-align: center;
+    margin-bottom:20px ;
+    width: 80%;
+    height:300px;
+  }
+  .pages{
+    display: flex;
+    float: right;
+    margin-right: 30px;
+  }
+  .pageNumber{
+    margin: 0 20px;
+  }
+  .ui-dialog{
+    background-color: white;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+  }
+  .ui-button{
+    background-color: transparent;
+  }
+
+  .imgCard{
+    width: 100%;
+    height: 220px;
+  }
+  
+  .pName{
+    margin: 5px;
+    float: left;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
+  }
+  .pPrice{
+    margin: 5px;
+    float: right;
+    font-size: 20px;
+  }
