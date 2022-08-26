@@ -45,9 +45,13 @@ let clothes =[
     Clothes("black chemise",'M',50,"Img/clothes6.jpg"),
     Clothes("blue chemise",'M',60,"Img/clothes7.jpg"),
 ]
-let displayClothes=()=>{
-    
-}
+
+//array to display 6 element in each pageand map it to change to values
+
+
+
+
+
 
 //both paragaraphs should be hidden first
 $("#SignInDialog").hide();
@@ -69,7 +73,7 @@ $("#signUpToggle").click(()=>{
 
 //slider 
 var img=['Img/slider1.jpg','Img/slider2.jpg','Img/slider3.jpg'];
-var image=$("#slide");
+var image=$("#slide"); 
 var i=0
 
 //slider interval
@@ -83,16 +87,57 @@ setInterval((()=>{
     }
 }),5000)
 
-$("#imgSlider").hide()
+$("#imgSlider").show()
+$("#afterSlide").hide()
 
-//hide previous button if page ==1
 
-$('#prev').hide();
 
+ //pagination test
+ let disArray=[];
+ let copyArray=clothes.slice();
+
+
+//displayClothes;
+
+let displayClothes=(arr)=>{
+    arr.forEach(e=>$("#grid-container").append(`<div class="grid-item">
+    <img class="imgCard" src="${e.imgSrc}">
+    <p class="pName">${e.name}</p>
+    <p class="pPrice">${e.price}</p>
+</div>`))
+}
+
+
+displayClothes(copyArray.slice(0,6))
 //button next on click func
 $("#next").click(()=>{
    $('.pageNumber').html(parseInt($('.pageNumber').html())+1)
+   $('#prev').show();
+   $(".grid-item").remove();
+   if(copyArray[5]!==undefined){
+    displayClothes(copyArray.slice(6))
+    $('#next').hide();
+   }
 })
+
+ 
+//hide previous button if page ==1
+
+$('#prev').hide();
+$("#prev").click(()=>{
+    copyArray=clothes;
+    $('.pageNumber').html(parseInt($('.pageNumber').html())-1)
+    if(parseInt($('.pageNumber').html())===1){
+        $('#prev').hide();
+        $('#next').show();
+        
+    }
+    $(".grid-item").remove();
+    displayClothes(copyArray.slice(0,6));
+ })
+ 
+
+
 
 //hover on Card
 $('.imgCard').hover(()=>{
@@ -102,11 +147,38 @@ $('.imgCard').hover(()=>{
 
 //li click to filter elements
 $("#man").click(()=>{
+   let k= clothes.filter(e=>e.gender==="M")
+    $("#imgSlider").hide()
+    $("#afterSlide").show()
+    $(".grid-item").remove();
+    displayClothes(k);
    
 })
 $("#women").click(()=>{
-   
+    let k= clothes.filter(e=>e.gender==="F")
+    $("#imgSlider").hide()
+    $("#afterSlide").show()
+    $(".grid-item").remove();
+    displayClothes(k);
+    
 })
 $("#kids").click(()=>{
-   
+    let k= clothes.filter(e=>e.gender==="K")
+    $("#imgSlider").hide()
+    $("#afterSlide").show()
+    $(".grid-item").remove();
+    displayClothes(k);
+})
+
+//search bar
+$("#searchButt").click(()=>{
+    displayArray=clothes.filter(e=>{return e.name.toUpperCase().includes($("#search").val().toUpperCase())})
+    $("#imgSlider").hide()
+    $("#afterSlide").show()
+    $(".grid-item").remove();
+    displayClothes(displayArray);
+})
+//home page onClick Logo
+$("#logo").click(()=>{
+    location.reload();
 })
